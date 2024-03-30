@@ -36,7 +36,7 @@ const Form = ({type}) => {
         
         localStorage.setItem("token",JSON.stringify(res.data.token));
         localStorage.setItem("userId",JSON.stringify(res.data.existingUser._id));
-        localStorage.setItem("userId",JSON.stringify(res.data.existingUser.username));
+        localStorage.setItem("userName",JSON.stringify(res.data.existingUser.username));
         
         setFormdata({username:"",email:"",password:""})
         navigate("/task")
