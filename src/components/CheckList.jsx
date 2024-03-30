@@ -10,7 +10,7 @@ const CheckList = () => {
   const id=useSelector((state)=>state.userId);
   
   const fetchTodos=async(id)=>{
-    const res=await axios.get(`http://localhost:8000/api/v1/todo/getalltodo/${id}`);
+    const res=await axios.get(`${import.meta.env.VITE_API_URL}/todo/getalltodo/${id}`);
     setData(res.data.data);
   }
   

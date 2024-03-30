@@ -10,7 +10,7 @@ const Module = ({ setOpen ,setData,data,ID,update="",setUpdate}) => {
     const createAndupdate=async()=>{
           if(update){
             try {
-                const res=await axios.put(`http://localhost:8000/api/v1/todo/updatetodo/${ID}`,{
+                const res=await axios.put(`${import.meta.env.VITE_API_URL}/todo/updatetodo/${ID}`,{
                     Text:formData.task,
                     Description:formData.des,
                     Priority:formData.pri,
@@ -23,7 +23,7 @@ const Module = ({ setOpen ,setData,data,ID,update="",setUpdate}) => {
               }
         }else{
             try {
-                const res=await axios.post("http://localhost:8000/api/v1/todo/createtodo",{
+                const res=await axios.post(`${import.meta.env.VITE_API_URL}/todo/createtodo`,{
                     Text:formData.task,
                     Description:formData.des,
                     Priority:formData.pri,

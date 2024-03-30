@@ -10,7 +10,7 @@ const Todos = ({data,setData,setDel}) => {
   const [filtered,setFiltered]=useState({Priority:"All",Status:"All"});
   
   const deleteHanlder=async(id)=>{
-    const res=await axios.delete(`http://localhost:8000/api/v1/todo/deletetodo/${id}`);
+    const res=await axios.delete(`${import.meta.env.VITE_API_URL}/todo/deletetodo/${id}`);
     setDel((prev)=>!prev) 
     // console.log(res);
   }
